@@ -1,0 +1,54 @@
+{
+  "name": "next-apollo-example",
+  "url": "git@github.com:adamsoffer/next-apollo-example.git",
+  "version": "0.0.0",
+  "description": "Next + Apollo integration",
+  "scripts": {
+    "dev": "next -p 8087",
+    "build": "next build",
+    "start": "next start -p 8087",
+    "precommit": "lint-staged",
+    "test": "jest",
+    "export": "cross-env NEXT_EXPORT=true next build && cross-env NEXT_EXPORT=true next export"
+  },
+  "author": "Adam Soffer",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@testing-library/react": "^9.1.4",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-emotion": "^10.0.13",
+    "husky": "^1.3.1",
+    "jest": "^24.9.0",
+    "lint-staged": "^8.2.0",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "^16.9.0",
+    "next-offline": "4.0.6",
+    "cross-env": "6.0.3"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "@apollo/react-ssr": "^3.1.5",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "apollo-boost": "^0.4.7",
+    "graphql": "^15.0.0",
+    "next": "canary",
+    "next-apollo": "^4.0.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
